@@ -377,6 +377,157 @@ h2.section-heading {
   letter-spacing: 0.05em;
 }
 
+/* Tanka generator */
+
+.tanka-app {
+  margin-top: 32px;
+}
+
+.tanka-poem {
+  margin: 0;
+  padding: 0.5rem 0 0;
+}
+
+.tanka-actions {
+  margin: 2.25rem 0 0;
+  padding: 0;
+  text-align: center;
+}
+
+.tanka-actions .button {
+  margin-top: 0;
+  font-size: 0.9rem;
+  line-height: 2em;
+  padding: 0 1.25em;
+}
+
+.tanka-poem-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tanka-poem-list > .tanka-row + .tanka-row {
+  margin-top: 1rem;
+}
+
+.tanka-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.tanka-poem__text {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  font-size: clamp(0.9rem, 2.6vw, 1.05rem);
+  font-weight: 700;
+  line-height: 1.7;
+  letter-spacing: 0.06em;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.tanka-share {
+  flex-shrink: 0;
+  margin-top: 0.2em;
+  padding: 0.2em 0.55em;
+  border: 2px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  font-size: 0.8em;
+  font-weight: 800;
+  line-height: 1.4;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tanka-share:hover {
+    color: var(--color-text);
+    box-shadow: var(--chip-shadow);
+    text-decoration: none;
+  }
+}
+
+.tanka-phrase-pool {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--color-border);
+}
+
+.tanka-phrase-pool__title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.tanka-phrase-pool__meta {
+  margin: 0.5rem 0 1rem;
+  color: var(--color-text-muted, var(--color-text));
+  font-size: 0.85rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.tanka-phrase-pool__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  columns: 1;
+  column-gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .tanka-phrase-pool__list {
+    columns: 2;
+  }
+}
+
+@media (min-width: 960px) {
+  .tanka-phrase-pool__list {
+    columns: 3;
+  }
+}
+
+.tanka-phrase-pool__item {
+  display: grid;
+  grid-template-columns: 1.25rem 1fr;
+  gap: 0.15rem 0.5rem;
+  break-inside: avoid;
+  margin: 0 0 0.35rem;
+  padding: 0.15rem 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 2.2rem;
+}
+
+.tanka-phrase-pool__mora {
+  grid-row: 1 / span 2;
+  align-self: start;
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.tanka-phrase-pool__text {
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.tanka-phrase-pool__reading {
+  grid-column: 2;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
 /* Tool index (top) */
 
 .tool-index {

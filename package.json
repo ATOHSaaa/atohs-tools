@@ -1,0 +1,28 @@
+{
+  "name": "atohs-tools",
+  "version": "1.0.0",
+  "description": "ブラウザ完結の小さな Web ツール集（ポータル）。公開想定: [tools.atohs.me](https://tools.atohs.me/)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "ginga:phrases": "node scripts/build-ginga-phrases.mjs scripts/shino-tweets.json",
+    "ginga:morph-filter": "node scripts/apply-morph-filter.mjs",
+    "ginga:roles": "node scripts/build-phrase-roles.mjs",
+    "ginga:chunks": "node scripts/build-phrase-chunks.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "kuromoji": "^0.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ATOHSaaa/atohs-tools.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ATOHSaaa/atohs-tools/issues"
+  },
+  "homepage": "https://github.com/ATOHSaaa/atohs-tools#readme"
+}
