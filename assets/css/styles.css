@@ -382,19 +382,23 @@ h2.section-heading {
 .tool-index {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: baseline;
+  gap: 0;
   margin: 20px 0 0;
   font-size: 1em;
   line-height: 1.5;
 }
 
-.tool-index a + a::before {
-  content: "／";
-  margin-inline: 0.4em;
+.tool-index a {
+  display: inline;
+  white-space: nowrap;
+}
+
+.tool-index__sep {
+  margin-inline: 0.45em;
   color: var(--color-text-muted);
   font-weight: 500;
-  text-decoration: none;
-  pointer-events: none;
+  user-select: none;
 }
 
 /* Tool bento grid */
