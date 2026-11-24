@@ -262,5 +262,5 @@ export const QUIZ_META = {
   title: "社会不適合タイプ診断",
   disclaimer:
     "娯楽・自己分析用の診断です。医学的・心理学的な評価ではありません。「社会不適合」という言葉も、ここではユーモアを交えた比喩として使っています。",
-  shareBaseUrl: "https://tools.atohs.me/tools/shakai-futekigo/",
+  shareBaseUrl: "https://tools.atohs.me/shakai-futekigo/",
 };

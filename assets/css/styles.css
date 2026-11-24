@@ -371,6 +371,19 @@ h2.section-heading {
   letter-spacing: 0.05em;
 }
 
+/* Tool index (top) */
+
+.tool-index {
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
 /* Tool bento grid */
 
 .tool-bento {

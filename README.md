@@ -26,8 +26,8 @@ python3 -m http.server 8080
 
 ```
 index.html      … トップ
-tools/font-simulator/ … Google Fonts プレビュー（ウェイト・行間・字間など）
-tools/shakai-futekigo/ … 社会不適合タイプ診断（16問・8タイプ）
+font-simulator/ … Google Fonts プレビュー（ウェイト・行間・字間など）
+shakai-futekigo/ … 社会不適合タイプ診断（16問・8タイプ）
 about.html      … サイト説明
 privacy.html    … プライバシー
 404.html        … GitHub Pages 用
@@ -37,6 +37,6 @@ assets/js/      … テーマ切替など
 
 ## ツールを足すとき
 
-1. 例: `tools/text-tidy/index.html` を追加
+1. 例: `text-tidy/index.html` を追加
 2. トップの `tool-grid` にリンク付きカードを追加（`badge` を外す）
 3. そのツールページで「データの保存先」「外部通信の有無」を明記
