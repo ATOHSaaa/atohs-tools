@@ -343,10 +343,6 @@ html[data-theme="dark"] .theme-toggle-icon--light {
   max-width: var(--width-header);
 }
 
-.main--home .page-title {
-  margin-top: 8px;
-}
-
 .page-title {
   margin: 0 0 8px;
   font-size: 1.65em;
