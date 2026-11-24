@@ -168,11 +168,12 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: min(calc(100% - 2 * var(--site-gutter)), var(--width-header));
+  box-sizing: border-box;
+  width: 100%;
   max-width: var(--width-header);
   height: calc(var(--header-height) - 2px);
-  margin: 0 auto;
-  padding: 0;
+  margin-inline: auto;
+  padding-inline: var(--site-gutter);
 }
 
 .header-logo {
@@ -325,11 +326,13 @@ html[data-theme="dark"] .theme-toggle-icon--light {
 /* Main layout */
 
 .main {
-  width: min(calc(100% - 2 * var(--site-gutter)), var(--width-header));
+  box-sizing: border-box;
+  width: 100%;
   max-width: var(--width-header);
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
+  padding-inline: var(--site-gutter);
   padding-bottom: 72px;
+  text-align: start;
 }
 
 .main--narrow {
@@ -338,11 +341,6 @@ html[data-theme="dark"] .theme-toggle-icon--light {
 
 .main--wide {
   max-width: var(--width-header);
-}
-
-.main--home {
-  max-width: var(--width-header);
-  text-align: start;
 }
 
 .main--home .page-title {
@@ -383,10 +381,7 @@ h2.section-heading {
 /* Tool index (top) */
 
 .tool-index {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 14px;
+  display: block;
   margin: 20px 0 0;
   font-size: 1em;
   line-height: 1.5;
