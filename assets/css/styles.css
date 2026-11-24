@@ -169,11 +169,11 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  width: 100%;
+  width: min(calc(100% - 2 * var(--site-gutter)), var(--width-header));
   max-width: var(--width-header);
   height: calc(var(--header-height) - 2px);
   margin-inline: auto;
-  padding-inline: var(--site-gutter);
+  padding: 0;
 }
 
 .header-logo {
@@ -327,19 +327,22 @@ html[data-theme="dark"] .theme-toggle-icon--light {
 
 .main {
   box-sizing: border-box;
-  width: 100%;
+  width: min(calc(100% - 2 * var(--site-gutter)), var(--width-header));
   max-width: var(--width-header);
   margin-inline: auto;
-  padding-inline: var(--site-gutter);
+  padding-inline: 0;
   padding-bottom: 72px;
   text-align: start;
 }
 
 .main--narrow {
+  width: min(calc(100% - 2 * var(--site-gutter)), var(--width-content));
   max-width: var(--width-content);
 }
 
-.main--wide {
+.main--wide,
+.main--home {
+  width: min(calc(100% - 2 * var(--site-gutter)), var(--width-header));
   max-width: var(--width-header);
 }
 
@@ -558,11 +561,14 @@ h2.section-heading {
 
 .footer-inner {
   display: flex;
+  align-items: center;
   justify-content: flex-end;
-  width: calc(100% - 2 * var(--site-gutter));
-  max-width: none;
-  margin: 0 auto;
-  padding: 32px 0;
+  box-sizing: border-box;
+  width: min(calc(100% - 2 * var(--site-gutter)), var(--width-header));
+  max-width: var(--width-header);
+  margin-inline: auto;
+  padding-block: 32px;
+  padding-inline: 0;
 }
 
 .footer-links {
@@ -825,11 +831,31 @@ h2.section-heading {
   text-align: center;
 }
 
-.not-found-block h1 {
+.not-found-code {
+  margin: 0 0 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--color-text-muted);
+}
+
+.not-found-lead {
+  margin: 1rem auto 0;
+  max-width: 28em;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin: 1.75rem 0 0;
+}
+
+.not-found-block .page-title {
   margin: 0;
-  font-size: 1.7em;
-  font-weight: 800;
-  letter-spacing: 0.05em;
 }
 
 @media (width <= 720px) {
@@ -852,7 +878,7 @@ h2.section-heading {
   }
 
   .footer-inner {
-    padding: 20px 0;
+    padding-block: 20px;
   }
 
   .footer-links {

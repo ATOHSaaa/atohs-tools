@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="atohs-tools のプライバシー。" />
-    <title>プライバシー | atohs-tools</title>
+    <meta name="description" content="tools.atohs.me のプライバシーポリシー。" />
+    <title>プライバシー | tools.atohs.me</title>
     <script>
       (function () {
         const key = "atohs-theme";
@@ -28,7 +28,7 @@
     <div class="site-content">
       <header class="header-top">
         <div class="header-inner">
-          <p class="header-logo"><a href="/">atohs-tools</a></p>
+          <p class="header-logo"><a href="/">tools.atohs.me</a></p>
           <div class="header-end">
             <button
               type="button"
@@ -75,30 +75,90 @@
 
       <main id="main" class="main main--narrow">
         <article class="prose">
-          <h1 class="page-title">プライバシー</h1>
-          <p class="main-lead" style="margin-bottom: 2rem">最終更新: 2026年11月22日</p>
+          <h1 class="page-title">プライバシーポリシー</h1>
+          <p class="main-lead" style="margin-bottom: 2rem">最終更新: 2026年11月24日</p>
 
           <p>
-            本ページは <strong>atohs-tools</strong>（以下「本サイト」）の情報の取り扱いを説明します。ツールごとの例外は各ページに記載します。
+            本ページは <strong>tools.atohs.me</strong>（以下「本サイト」）における情報の取り扱いを説明します。ツールによって外部連携や保存の有無は異なります。共通事項は本ページに、個別の事情は該当する節または各ツールページに記載します。
           </p>
 
-          <h2>サーバーへの送信</h2>
+          <h2>本サイトについて</h2>
           <p>
-            静的ページおよび各ツールは、利用者の入力を本サイトのサーバーへ送る機能を有しません。ホスティング側のアクセスログが発生する場合があります。
+            本サイトは個人（atohs）が運営する Web ツールの集です。掲載ツールの名称や利用する外部サービスに含まれる商標・ロゴ等は、それぞれの権利者に帰属します。任意のタイミングで、ツールの追加・変更・公開終了を行う場合があります。
+          </p>
+
+          <h2>入力内容とサーバー</h2>
+          <p>
+            各ツールで入力・編集したテキストは、原則として<strong>あなたのブラウザ内だけ</strong>で処理され、本サイトの運営者が用意したアプリケーションサーバーへ送信されることはありません（静的サイトとして配信しています）。
+            ホスティング事業者（GitHub Pages 等）のアクセスログが別途残る場合があります。
           </p>
 
           <h2>ブラウザ内の保存</h2>
           <p>
-            ツールによって <code>localStorage</code> 等を使います。<strong>社会不適合タイプ診断</strong>は直近の結果タイプ ID のみ保存することがあります。テーマ設定は
-            <code>atohs-theme</code>（atohs.me と共通キー）に保存します。
+            サイト全体の表示設定（例: ダークモード、キー <code>atohs-theme</code>）や、各ツールの作業状態は、必要に応じて <code>localStorage</code> 等に保存することがあります。保存する項目はツールごとに異なり、ブラウザのデータ削除や設定変更で消えることがあります。
           </p>
 
-          <h2>第三者サービス</h2>
-          <p>現時点でアクセス解析タグは設置していません。導入する場合は本ページを更新します。</p>
+          <h2 id="google-fonts">Font Simulator と Google Fonts</h2>
+          <p>
+            <strong>Font Simulator</strong> を利用する場合、プレビュー用のフォントファイルおよびスタイルシートを
+            <code>fonts.googleapis.com</code>・<code>fonts.gstatic.com</code> から取得します。フォント一覧の取得には
+            <a href="https://fontsource.org/" rel="noopener noreferrer">Fontsource API</a> を利用する場合があります。表示フォントのライセンスは Google Fonts 上の各フォントに従い、本サイトはフォントファイルの販売や再配布を行いません。
+          </p>
+          <p>
+            上記の読み込みのため、ブラウザが Google のサーバーへ接続する際、<strong>接続元 IP アドレスなどが Google に送信される可能性</strong>があります（Google のプライバシーポリシーが適用されます）。欧州など一部の法域では、同意なしのフォント読込みが問題視された事例もあるため、国外から利用される場合はご留意ください。詳細は
+            <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google のプライバシー</a>をご確認ください。
+          </p>
 
-          <p><a href="/">← ツール一覧</a></p>
+          <h2 id="analytics">アクセス解析（Google Analytics 4）</h2>
+          <p>
+            本サイトでは、利用状況の把握のため <strong>Google Analytics 4（GA4）</strong> を利用する（または利用する予定です）。Cookie 等を用いて、ページの閲覧、端末・ブラウザの種類、おおよその地域、参照元などが Google に送信されることがあります。
+          </p>
+          <ul>
+            <li>提供者: Google LLC</li>
+            <li>
+              概要:
+              <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google プライバシーポリシー</a>、
+              <a href="https://marketingplatform.google.com/about/analytics/terms/us/" rel="noopener noreferrer">Google Analytics 利用規約</a>
+            </li>
+            <li>
+              オプトアウト:
+              <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener noreferrer">Google Analytics オプトアウト アドオン</a>、ブラウザの Cookie 設定
+            </li>
+          </ul>
+
+          <h2 id="clarity">セッション記録（Microsoft Clarity）</h2>
+          <p>
+            本サイトでは、UI 改善のため <strong>Microsoft Clarity</strong> を利用する（または利用する予定です）。ページ上の操作、スクロール、クリックの集計や、セッション記録（ヒートマップ等）が Microsoft に送信・保存されることがあります。入力フィールドに個人情報や機密情報を入れた場合、それが記録に含まれる可能性があるため、ご注意ください。
+          </p>
+          <ul>
+            <li>提供者: Microsoft Corporation</li>
+            <li>
+              概要:
+              <a href="https://privacy.microsoft.com/" rel="noopener noreferrer">Microsoft プライバシー</a>、
+              <a href="https://clarity.microsoft.com/terms" rel="noopener noreferrer">Clarity 利用規約</a>
+            </li>
+          </ul>
+
+          <h2>お問い合わせ</h2>
+          <p>
+            本ポリシーに関するお問い合わせは、サイト運営者（atohs）までご連絡ください。連絡先は
+            <a href="https://atohs.me/">atohs.me</a> をご覧ください。
+          </p>
+
+          <h2>変更</h2>
+          <p>本ポリシーの内容は、サービスや法令の変更に応じて更新することがあります。重要な変更は本ページの更新日で示します。</p>
+
+          <p><a href="/">← ホーム</a></p>
         </article>
       </main>
+
+      <footer class="footer-top">
+        <div class="footer-inner">
+          <nav class="footer-links" aria-label="サイト">
+            <a class="footer-link" href="/privacy.html" aria-current="page">プライバシーポリシー</a>
+          </nav>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

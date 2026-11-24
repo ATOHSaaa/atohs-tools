@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="お探しのページは見つかりませんでした。" />
     <meta name="robots" content="noindex" />
-    <title>ページが見つかりません | atohs-tools</title>
+    <title>404 | tools.atohs.me</title>
     <script>
       (function () {
         const key = "atohs-theme";
@@ -28,7 +29,7 @@
     <div class="site-content">
       <header class="header-top">
         <div class="header-inner">
-          <p class="header-logo"><a href="/">atohs-tools</a></p>
+          <p class="header-logo"><a href="/">tools.atohs.me</a></p>
           <div class="header-end">
             <button
               type="button"
@@ -74,10 +75,24 @@
       </header>
 
       <main id="main" class="main main--narrow not-found-block">
-        <h1>ページが見つかりません</h1>
-        <p>リンクが古いか、まだ公開されていないツールかもしれません。</p>
-        <p><a class="button" href="/">ホームへ</a></p>
+        <p class="not-found-code" aria-hidden="true">404</p>
+        <h1 class="page-title">ページが見つかりません</h1>
+        <p class="not-found-lead">
+          URL が誤っているか、ページが移動・削除された可能性があります。
+        </p>
+        <p class="not-found-actions">
+          <a class="button" href="/">ホーム</a>
+          <a class="button button--secondary" href="/font-simulator/">Font Simulator</a>
+        </p>
       </main>
+
+      <footer class="footer-top">
+        <div class="footer-inner">
+          <nav class="footer-links" aria-label="サイト">
+            <a class="footer-link" href="/privacy.html">プライバシーポリシー</a>
+          </nav>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
