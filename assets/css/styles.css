@@ -1978,3 +1978,1001 @@ h2.section-heading {
     transition: none;
   }
 }
+
+/* Bungou memory */
+
+.main--bungo {
+  width: min(calc(100% - 2 * var(--site-gutter)), 920px);
+  max-width: 920px;
+}
+
+.main--bungo.is-bungo-playing {
+  padding-bottom: 16px;
+}
+
+.main--bungo.is-bungo-playing .page-title {
+  margin-block-end: 0.35rem;
+  font-size: clamp(1.12rem, 3.6vw, 1.45rem);
+  line-height: 1.35;
+}
+
+.main--bungo.is-bungo-playing .bungo-app {
+  margin-top: 0.35rem;
+}
+
+.main--bungo.is-bungo-playing .tool-footnote {
+  display: none;
+}
+
+.main--bungo.is-bungo-playing .bungo-toolbar {
+  margin-block-end: 20px;
+}
+
+.main--bungo.is-bungo-playing .bungo-players {
+  margin-block-end: 16px;
+}
+
+.bungo-app {
+  margin-top: 20px;
+}
+
+.bungo-lead {
+  margin: 0 0 28px;
+  max-width: 40em;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+}
+
+.bungo-fieldset-legend {
+  display: block;
+  margin: 0 0 10px;
+  padding: 0;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.bungo-intro__field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1rem;
+  margin: 0 0 22px;
+}
+
+.bungo-intro__label {
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.bungo-picker {
+  --bungo-picker-accent: #1d5dc9;
+  --bungo-picker-surface: color-mix(in srgb, var(--color-bg) 78%, transparent);
+  --bungo-picker-popover-border: color-mix(in srgb, var(--color-border-strong) 52%, transparent);
+  flex: 0 0 auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+[data-theme="dark"] .bungo-picker,
+:root:not([data-theme="light"]) .bungo-picker {
+  --bungo-picker-surface: color-mix(in srgb, var(--color-bg) 68%, #42507f 32%);
+  --bungo-picker-popover-border: color-mix(in srgb, var(--color-text) 22%, transparent);
+}
+
+.bungo-picker__control {
+  position: relative;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+}
+
+.bungo-picker__trigger {
+  display: block;
+  position: relative;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  margin: 0;
+  padding: 0.55rem 1.55rem 0.55rem 0.85rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: start;
+  cursor: pointer;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.bungo-picker.is-open .bungo-picker__trigger,
+.bungo-picker__trigger:focus-visible {
+  border-color: var(--color-border-strong);
+  outline: 2px solid var(--color-border-strong);
+  outline-offset: 3px;
+}
+
+.bungo-picker__chevron {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-end: 0.5rem;
+  inline-size: 12px;
+  block-size: 8px;
+  margin-block-start: -4px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 8px;
+  transform: none;
+  transition: transform 0.18s ease;
+}
+
+[data-theme="dark"] .bungo-picker__chevron,
+:root:not([data-theme="light"]) .bungo-picker__chevron {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%23aeb4d4' stroke-width='2' stroke-linecap='round' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+}
+
+.bungo-picker.is-open .bungo-picker__chevron {
+  transform: rotate(180deg);
+}
+
+.bungo-picker__popover {
+  position: absolute;
+  inset-block-start: 100%;
+  inset-inline-start: 0;
+  inset-inline-end: auto;
+  z-index: 30;
+  display: none;
+  gap: 4px;
+  inline-size: max(100%, 10.75rem);
+  margin-block-start: 2px;
+  margin: 0;
+  padding: 8px;
+  border: 1px solid var(--bungo-picker-popover-border);
+  border-radius: 14px;
+  background: var(--bungo-picker-surface);
+  box-shadow:
+    var(--chip-shadow-hover),
+    0 16px 44px color-mix(in srgb, var(--color-text) 14%, transparent);
+  backdrop-filter: blur(22px) saturate(1.25);
+  -webkit-backdrop-filter: blur(22px) saturate(1.25);
+}
+
+.bungo-picker.is-open .bungo-picker__popover {
+  display: grid;
+}
+
+.bungo-picker__option {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  inline-size: 100%;
+  margin: 0;
+  padding: 0.48rem 0.55rem;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: start;
+  cursor: pointer;
+  transition:
+    background-color 0.12s ease,
+    color 0.12s ease;
+}
+
+.bungo-picker__mark {
+  display: inline-flex;
+  flex: 0 0 1.15rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.bungo-picker__check {
+  opacity: 0;
+}
+
+.bungo-picker__option.is-selected .bungo-picker__check {
+  opacity: 1;
+}
+
+.bungo-picker__option:hover,
+.bungo-picker__option:focus-visible {
+  background: var(--bungo-picker-accent);
+  color: #fff;
+  outline: none;
+}
+
+.bungo-picker__option:hover .bungo-picker__check,
+.bungo-picker__option:focus-visible .bungo-picker__check {
+  opacity: 1;
+}
+
+.bungo-diff {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 0;
+  padding: 0;
+  border: 0;
+}
+
+@media (width >= 640px) {
+  .bungo-diff {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.bungo-diff__option {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.bungo-diff__option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bungo-diff__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-block-size: 100%;
+  padding: 0.85rem 1rem 0.9rem 2.05rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  transition:
+    background-color 0.15s,
+    border-color 0.15s,
+    color 0.15s,
+    box-shadow 0.15s;
+}
+
+.bungo-diff__card::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 1.05rem;
+  inset-inline-start: 0.65rem;
+  inline-size: 1.05rem;
+  block-size: 1.05rem;
+  border: 2px solid var(--color-border-strong);
+  border-radius: 50%;
+  background: var(--color-bg);
+}
+
+.bungo-diff__option input:checked + .bungo-diff__card {
+  border-color: var(--color-border-strong);
+}
+
+.bungo-diff__option input:checked + .bungo-diff__card::before {
+  border-color: var(--color-text);
+  box-shadow: inset 0 0 0 0.27rem var(--color-text);
+}
+
+.bungo-diff__option input:focus-visible + .bungo-diff__card {
+  outline: 2px solid var(--color-border-strong);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .bungo-diff__option:hover .bungo-diff__card {
+    border-color: var(--color-border-strong);
+    box-shadow: var(--chip-shadow);
+  }
+
+}
+
+.bungo-diff__label {
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.bungo-diff__hint {
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.bungo-intro__actions {
+  margin: 28px 0 0;
+  text-align: center;
+}
+
+.bungo-players {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0 0 12px;
+}
+
+.bungo-player {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.38rem 0.65rem;
+  border: 2px solid var(--color-border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-text) 4%, var(--color-bg));
+  color: var(--color-text-muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.3;
+  transition:
+    border-color 0.15s,
+    color 0.15s,
+    background-color 0.15s,
+    box-shadow 0.15s,
+    opacity 0.15s;
+}
+
+.bungo-player:not(.is-active) {
+  opacity: 0.72;
+}
+
+.bungo-player.is-active {
+  border-color: var(--color-text);
+  background: var(--color-text);
+  color: var(--color-bg);
+  opacity: 1;
+  box-shadow: var(--chip-shadow);
+}
+
+.bungo-player__name {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.1rem;
+}
+
+.bungo-player__turn {
+  display: none;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.bungo-player.is-active .bungo-player__turn {
+  display: inline;
+}
+
+.bungo-player__score {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: 1.35rem;
+  padding: 0.05rem 0.35rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-text) 10%, var(--color-bg));
+  font-variant-numeric: tabular-nums;
+}
+
+.bungo-player.is-active .bungo-player__score {
+  background: color-mix(in srgb, var(--color-bg) 24%, transparent);
+  color: var(--color-bg);
+}
+
+.bungo-standings {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bungo-standings li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.45rem 0;
+  border-block-end: 1px solid var(--color-border);
+  font-size: 0.95rem;
+}
+
+.bungo-standings li:last-child {
+  border-block-end: 0;
+}
+
+.bungo-standings span {
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.bungo-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  margin: 0 0 18px;
+}
+
+.bungo-stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.15rem 0.15rem;
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.bungo-stats__sep {
+  margin-inline: 0.45em;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.bungo-toolbar__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.bungo-toolbar__btn {
+  margin-top: 0;
+  padding-inline: 1em;
+  font-size: 0.88rem;
+  line-height: 2em;
+}
+
+.bungo-board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+@media (width >= 900px) {
+  .bungo-board[data-pairs="12"] {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.bungo-board--fit {
+  grid-template-columns: repeat(var(--bungo-cols), var(--bungo-card-width));
+  grid-template-rows: repeat(var(--bungo-rows), var(--bungo-card-height));
+  justify-content: center;
+}
+
+.bungo-board--fit .bungo-card {
+  inline-size: var(--bungo-card-width);
+  max-inline-size: 100%;
+  justify-self: center;
+}
+
+.bungo-board--fit .bungo-card__inner {
+  inline-size: 100%;
+  aspect-ratio: 3 / 4;
+}
+
+.bungo-card {
+  position: relative;
+  display: block;
+  align-self: start;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  perspective: 900px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bungo-card:focus-visible {
+  outline: 2px solid var(--color-border-strong);
+  outline-offset: 3px;
+}
+
+.bungo-card.is-matched {
+  cursor: default;
+}
+
+.bungo-card__inner {
+  display: block;
+  position: relative;
+  inline-size: 100%;
+  aspect-ratio: 3 / 4;
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bungo-card.is-flipped .bungo-card__inner,
+.bungo-card.is-matched .bungo-card__inner {
+  transform: rotateY(180deg);
+}
+
+.bungo-card__face {
+  position: absolute;
+  inset: 0;
+  overflow: clip;
+  border: 2px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.bungo-card__face--back {
+  --bungo-back-fill: color-mix(in srgb, var(--color-text) 94%, var(--color-bg));
+  --bungo-back-line: color-mix(in srgb, var(--color-bg) 14%, transparent);
+  --bungo-back-frame: color-mix(in srgb, var(--color-bg) 42%, transparent);
+  --bungo-back-frame-inner: color-mix(in srgb, var(--color-bg) 22%, transparent);
+  --bungo-back-inset: color-mix(in srgb, var(--color-text) 78%, var(--color-bg));
+  --bungo-back-panel-line: color-mix(in srgb, var(--color-bg) 11%, transparent);
+  --bungo-back-panel-opacity: 0.9;
+  background-color: var(--bungo-back-fill);
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      var(--bungo-back-line) 0 1px,
+      transparent 1px 9px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      var(--bungo-back-line) 0 1px,
+      transparent 1px 9px
+    );
+}
+
+[data-theme="dark"] .bungo-card__face--back {
+  --bungo-back-fill: color-mix(in srgb, var(--color-text) 14%, var(--color-bg));
+  --bungo-back-line: color-mix(in srgb, var(--color-text) 12%, transparent);
+  --bungo-back-frame: color-mix(in srgb, var(--color-text) 24%, transparent);
+  --bungo-back-frame-inner: color-mix(in srgb, var(--color-text) 14%, transparent);
+  --bungo-back-inset: color-mix(in srgb, var(--color-text) 10%, var(--color-bg));
+  --bungo-back-panel-line: color-mix(in srgb, var(--color-text) 11%, transparent);
+  --bungo-back-panel-opacity: 0.68;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .bungo-card__face--back {
+    --bungo-back-fill: color-mix(in srgb, var(--color-text) 14%, var(--color-bg));
+    --bungo-back-line: color-mix(in srgb, var(--color-text) 12%, transparent);
+    --bungo-back-frame: color-mix(in srgb, var(--color-text) 24%, transparent);
+    --bungo-back-frame-inner: color-mix(in srgb, var(--color-text) 14%, transparent);
+    --bungo-back-inset: color-mix(in srgb, var(--color-text) 10%, var(--color-bg));
+    --bungo-back-panel-line: color-mix(in srgb, var(--color-text) 11%, transparent);
+    --bungo-back-panel-opacity: 0.68;
+  }
+
+  :root:not([data-theme="light"]) .bungo-card__face {
+    border-color: color-mix(in srgb, var(--color-text) 30%, var(--color-bg));
+  }
+}
+
+[data-theme="dark"] .bungo-card__face {
+  border-color: color-mix(in srgb, var(--color-text) 30%, var(--color-bg));
+}
+
+.bungo-card__face--back::before {
+  content: "";
+  position: absolute;
+  inset: 0.4rem;
+  border: 2px solid var(--bungo-back-frame);
+  border-radius: calc(var(--radius-sm) - 3px);
+  box-shadow:
+    inset 0 0 0 1px var(--bungo-back-frame-inner),
+    inset 0 0 0 0.32rem var(--bungo-back-inset);
+  pointer-events: none;
+}
+
+.bungo-card__face--back::after {
+  content: "";
+  position: absolute;
+  inset: 0.72rem;
+  border-radius: calc(var(--radius-sm) - 5px);
+  background:
+    repeating-linear-gradient(
+      0deg,
+      var(--bungo-back-panel-line) 0 2px,
+      transparent 2px 8px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--bungo-back-panel-line) 0 2px,
+      transparent 2px 8px
+    );
+  opacity: var(--bungo-back-panel-opacity);
+  pointer-events: none;
+}
+
+.bungo-card__face--front {
+  display: grid;
+  background: color-mix(in srgb, var(--color-text) 16%, var(--color-bg));
+  transform: rotateY(180deg);
+}
+
+.bungo-card.is-matched .bungo-card__face--front {
+  box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--color-text) 18%, transparent);
+}
+
+.bungo-play {
+  --bungo-match-accent: #6eb5de;
+}
+
+[data-theme="dark"] .bungo-play {
+  --bungo-match-accent: #8ec8ea;
+}
+
+.bungo-card.is-pair-hit {
+  z-index: 1;
+  animation: bungo-card-pop 0.72s cubic-bezier(0.34, 1.08, 0.64, 1);
+}
+
+.bungo-card.is-pair-hit::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  z-index: 4;
+  border: 2px solid transparent;
+  border-radius: calc(var(--radius-sm) + 4px);
+  pointer-events: none;
+  animation: bungo-pair-outer-glow 1.55s ease-in-out;
+}
+
+.bungo-card.is-pair-hit .bungo-card__face--front {
+  animation: bungo-pair-frame-glow 1.55s ease-in-out;
+}
+
+@keyframes bungo-card-pop {
+  0% {
+    scale: 1;
+  }
+
+  38% {
+    scale: 1.055;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes bungo-pair-outer-glow {
+  0%,
+  100% {
+    opacity: 0;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  16% {
+    opacity: 1;
+    border-color: color-mix(in srgb, var(--bungo-match-accent) 92%, white);
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--bungo-match-accent) 55%, transparent),
+      0 0 14px 3px color-mix(in srgb, var(--bungo-match-accent) 48%, transparent),
+      0 0 28px 6px color-mix(in srgb, var(--bungo-match-accent) 28%, transparent);
+  }
+
+  38%,
+  58% {
+    opacity: 0.95;
+    border-color: color-mix(in srgb, var(--bungo-match-accent) 88%, white);
+    box-shadow:
+      0 0 0 2px color-mix(in srgb, var(--bungo-match-accent) 50%, transparent),
+      0 0 16px 4px color-mix(in srgb, var(--bungo-match-accent) 42%, transparent),
+      0 0 32px 8px color-mix(in srgb, var(--bungo-match-accent) 24%, transparent);
+  }
+
+  82% {
+    opacity: 0.35;
+    border-color: color-mix(in srgb, var(--bungo-match-accent) 40%, transparent);
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--bungo-match-accent) 22%, transparent),
+      0 0 8px 2px color-mix(in srgb, var(--bungo-match-accent) 18%, transparent);
+  }
+}
+
+@keyframes bungo-pair-frame-glow {
+  0%,
+  100% {
+    border-color: var(--color-border-strong);
+    box-shadow: none;
+  }
+
+  18% {
+    border-color: color-mix(in srgb, var(--bungo-match-accent) 78%, white);
+    box-shadow:
+      inset 0 0 0 2px color-mix(in srgb, var(--bungo-match-accent) 75%, white),
+      inset 0 0 14px color-mix(in srgb, var(--bungo-match-accent) 38%, transparent),
+      0 0 10px color-mix(in srgb, var(--bungo-match-accent) 35%, transparent);
+  }
+
+  40%,
+  60% {
+    border-color: color-mix(in srgb, var(--bungo-match-accent) 72%, white);
+    box-shadow:
+      inset 0 0 0 2px color-mix(in srgb, var(--bungo-match-accent) 68%, white),
+      inset 0 0 16px color-mix(in srgb, var(--bungo-match-accent) 36%, transparent),
+      0 0 12px color-mix(in srgb, var(--bungo-match-accent) 32%, transparent);
+  }
+
+  84% {
+    border-color: color-mix(in srgb, var(--bungo-match-accent) 45%, var(--color-border-strong));
+    box-shadow:
+      inset 0 0 0 2px color-mix(in srgb, var(--bungo-match-accent) 35%, transparent),
+      inset 0 0 8px color-mix(in srgb, var(--bungo-match-accent) 16%, transparent);
+  }
+}
+
+.bungo-card__person,
+.bungo-card__work {
+  container-type: inline-size;
+  display: grid;
+  inline-size: 100%;
+  block-size: 100%;
+  min-block-size: 0;
+}
+
+.bungo-card__person {
+  position: relative;
+}
+
+.bungo-card__photo {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.bungo-card__person-name {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  padding: 1.8em 0.35em 0.45em;
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--color-bg) 92%, transparent) 0%,
+    color-mix(in srgb, var(--color-bg) 62%, transparent) 58%,
+    transparent 100%
+  );
+  font-size: clamp(0.7rem, 9cqi, 1rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  text-align: center;
+  text-shadow: 0 1px 2px color-mix(in srgb, var(--color-bg) 75%, transparent);
+}
+
+.bungo-card__work {
+  align-content: center;
+  justify-items: center;
+  padding: 0.65rem 0.5rem;
+  text-align: center;
+}
+
+.bungo-card__work-title {
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho", "Yu Mincho", "YuMincho", serif;
+  font-size: clamp(0.88rem, 10.5cqi, 1.28rem);
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.06em;
+  overflow-wrap: anywhere;
+}
+
+.bungo-win {
+  position: fixed;
+  inset: auto;
+  top: var(--bungo-dialog-top, 30vh);
+  left: var(--bungo-dialog-left, 50%);
+  width: min(var(--bungo-dialog-width, 34rem), calc(100vw - 2rem));
+  max-width: 34rem;
+  max-height: min(86dvh, 40rem);
+  margin: 0;
+  padding: 1.4rem 1.25rem 1.2rem;
+  border: 2px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  color: var(--color-text);
+  overflow: auto;
+  overscroll-behavior: contain;
+  transform: translateX(-50%);
+  transform-origin: 50% 0;
+}
+
+.bungo-win[open] {
+  animation: bungo-dialog-in 0.34s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.bungo-win--confirm {
+  inline-size: min(22rem, calc(100vw - 2rem));
+  max-inline-size: 22rem;
+  padding: 1.35rem 1.35rem 1.25rem;
+  text-align: center;
+  transform: translateX(-50%);
+  transform-origin: 50% 0;
+}
+
+.bungo-win--confirm .bungo-win__actions {
+  justify-content: center;
+}
+
+.bungo-win--result,
+.bungo-win--result .bungo-win__inner {
+  text-align: center;
+}
+
+.bungo-win--result .bungo-win__actions {
+  justify-content: center;
+}
+
+.bungo-win--result .bungo-standings {
+  display: inline-block;
+  inline-size: min(100%, 14rem);
+  margin-inline: auto;
+  text-align: start;
+}
+
+.bungo-win--result .bungo-recap {
+  display: inline-grid;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  margin-inline: auto;
+  text-align: start;
+}
+
+@keyframes bungo-dialog-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -0.85rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.bungo-win::backdrop {
+  background: color-mix(in srgb, #0a0a37 52%, transparent);
+}
+
+.bungo-win[open]::backdrop {
+  animation: bungo-backdrop-in 0.28s ease both;
+}
+
+@keyframes bungo-backdrop-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.bungo-win__title {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.bungo-dialog__lead {
+  margin: 0.55rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.bungo-win__score {
+  margin: 0.45rem 0 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.bungo-recap {
+  display: grid;
+  gap: 0.55rem;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bungo-recap li {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.bungo-recap img {
+  display: block;
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  object-fit: cover;
+  object-position: 50% 15%;
+  border-radius: 4px;
+}
+
+.bungo-recap p {
+  margin: 0;
+  min-inline-size: 0;
+  line-height: 1.4;
+}
+
+.bungo-recap strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.bungo-recap span {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.bungo-win__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.2rem 0 0;
+}
+
+.bungo-win__actions .button {
+  margin-top: 0;
+}
+
+.bungo-win__actions .button:not(.button--secondary):focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-bg) 70%, white);
+  outline-offset: -2px;
+}
+
+.bungo-win__actions .button--secondary:focus-visible {
+  outline: none;
+  box-shadow: var(--chip-shadow-hover);
+}
+
+.bungo-sources {
+  margin-top: 1rem;
+}
+
+.bungo-sources summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.bungo-sources ul {
+  margin: 0.7rem 0 0;
+  padding-inline-start: 1.2rem;
+}
+
+.bungo-sources a {
+  overflow-wrap: anywhere;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bungo-card__inner {
+    transition: none;
+  }
+
+  .bungo-card.is-pair-hit {
+    animation: none;
+  }
+
+  .bungo-card.is-pair-hit::after {
+    animation: none;
+    opacity: 1;
+    border-color: color-mix(in srgb, var(--bungo-match-accent) 70%, transparent);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--bungo-match-accent) 35%, transparent);
+  }
+
+  .bungo-card.is-pair-hit .bungo-card__face--front {
+    animation: none;
+    border-color: color-mix(in srgb, var(--bungo-match-accent) 65%, var(--color-border-strong));
+    box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--bungo-match-accent) 55%, transparent);
+  }
+
+  .bungo-win[open] {
+    animation: none;
+  }
+
+  .bungo-win[open]::backdrop {
+    animation: none;
+  }
+}

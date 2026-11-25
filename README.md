@@ -29,6 +29,8 @@ index.html      … トップ
 font-simulator/ … Google Fonts プレビュー（ウェイト・行間・字間など）
 kumihan-simulator/ … Web組版の CSS プレビュー（禁則・段組・縦組など）
 shakai-futekigo/ … 社会不適合タイプ診断（16問・8タイプ）
+bungo-memory/ … 文豪神経衰弱（肖像と代表作のペア）
+bungou-memory/ … 上記へのリダイレクト
 about.html      … サイト説明
 privacy.html    … プライバシー
 404.html        … GitHub Pages 用
