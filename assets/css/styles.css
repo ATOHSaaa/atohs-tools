@@ -1409,6 +1409,338 @@ h2.section-heading {
   text-align: end;
 }
 
+/* Web組版 Simulator */
+
+.kumi-sim__layout {
+  margin-top: 4px;
+}
+
+@media (width >= 900px) {
+  .kumi-sim__layout.font-sim__layout {
+    grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
+  }
+}
+
+.kumi-sim .kumi-sim__controls.font-sim__controls {
+  padding: 12px 10px;
+}
+
+.kumi-sim__source-field {
+  margin: 0 0 14px;
+  padding: 14px 12px;
+  overflow: hidden;
+  border: var(--bento-border-width) solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--color-text) 3%, var(--color-bg));
+}
+
+.kumi-sim__source-field > .font-sim__label {
+  display: block;
+  margin: -14px -12px 12px;
+  padding: 0.45em 12px;
+  border-bottom: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-text) 7%, var(--color-bg));
+  font-size: 0.78em;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  color: var(--color-text);
+}
+
+.kumi-sim__md-hint {
+  margin: 4px 0 8px;
+  font-size: 0.78em;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.kumi-sim__md-hint code {
+  font-size: 0.95em;
+}
+
+.kumi-sim__source-input {
+  display: block;
+  width: 100%;
+  min-height: 4.25rem;
+  max-height: 40vh;
+  resize: vertical;
+  line-height: 1.55;
+  font-size: 0.88em;
+}
+
+.kumi-sim__preview-pane {
+  margin: 0 0 20px;
+  padding: 24px 20px;
+  overflow: auto;
+  border: var(--bento-border-width) solid var(--color-border-strong);
+  border-radius: var(--radius-bento);
+}
+
+.kumi-sim__color-field .font-sim__field-head {
+  margin-bottom: 8px;
+}
+
+.kumi-sim__color-input {
+  display: block;
+  width: 100%;
+  height: 2.5rem;
+  padding: 0.2rem;
+  border: 2px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  cursor: pointer;
+}
+
+.kumi-sim__color-input:focus-visible {
+  outline: 2px solid var(--color-border-strong);
+  outline-offset: 2px;
+}
+
+.kumi-sim__preview-pane--vertical {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  min-height: min(70vh, 36rem);
+}
+
+.kumi-sim__article {
+  margin: 0 auto;
+}
+
+.kumi-sim__controls .font-sim__seg-btn {
+  font-size: 0.72em;
+  line-height: 1.35;
+  text-align: start;
+}
+
+.kumi-sim__panel {
+  margin: 0 0 14px;
+  padding: 14px 12px;
+  overflow: hidden;
+  border: var(--bento-border-width) solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--color-text) 3%, var(--color-bg));
+}
+
+.kumi-sim__panel:last-child {
+  margin-bottom: 0;
+}
+
+.kumi-sim__panel-title {
+  margin: -14px -12px 14px;
+  padding: 0.45em 12px;
+  border-bottom: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-text) 7%, var(--color-bg));
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  color: var(--color-text);
+}
+
+.kumi-sim__panel .font-sim__field:last-child,
+.kumi-sim__panel .kumi-sim__heading-details:last-child {
+  margin-bottom: 0;
+}
+
+.kumi-sim__heading-effective {
+  margin: 0 0 6px;
+  font-size: 0.78em;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-muted);
+}
+
+.kumi-sim__heading-details {
+  margin: 0 0 18px;
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--color-text) 4%, var(--color-bg));
+}
+
+.kumi-sim__heading-details summary {
+  padding: 0.55em 0.65em;
+  font-size: 0.82em;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.kumi-sim__heading-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.kumi-sim__heading-details summary::before {
+  content: "▸ ";
+}
+
+.kumi-sim__heading-details[open] summary::before {
+  content: "▾ ";
+}
+
+.kumi-sim__heading-details-body {
+  padding: 0 0.65em 0.65em;
+  border-top: 1px solid var(--color-border);
+}
+
+.kumi-sim__heading-override-row {
+  margin-top: 12px;
+}
+
+.kumi-sim__heading-override-row.is-disabled .font-sim__range {
+  opacity: 0.45;
+}
+
+.kumi-sim__override-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 0.82em;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.kumi-sim__override-check input {
+  accent-color: var(--color-text);
+}
+
+.kumi-sim__heading {
+  margin: 0 0 0.75em;
+  text-indent: 0;
+}
+
+.kumi-sim__heading--h2 {
+  font-size: var(--kumi-h2-size, 1.35em);
+  font-weight: var(--kumi-h2-weight, 700);
+  line-height: var(--kumi-h2-lh, 1.4);
+  letter-spacing: var(--kumi-h2-ls, 0em);
+}
+
+.kumi-sim__heading--h3 {
+  font-size: var(--kumi-h3-size, 1.15em);
+  font-weight: var(--kumi-h3-weight, 700);
+  line-height: var(--kumi-h3-lh, 1.4);
+  letter-spacing: var(--kumi-h3-ls, 0em);
+}
+
+.kumi-sim__heading--h4 {
+  font-size: var(--kumi-h4-size, 1.05em);
+  font-weight: var(--kumi-h4-weight, 700);
+  line-height: var(--kumi-h4-lh, 1.4);
+  letter-spacing: var(--kumi-h4-ls, 0em);
+}
+
+.kumi-sim__article > .kumi-sim__heading + .kumi-sim__paragraph,
+.kumi-sim__article > .kumi-sim__heading + .kumi-sim__heading {
+  margin-top: 0;
+}
+
+.kumi-sim__article > .kumi-sim__paragraph + .kumi-sim__heading {
+  margin-top: 1.25em;
+}
+
+.kumi-sim__paragraph {
+  margin: 0 0 1em;
+}
+
+.kumi-sim__paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.kumi-sim__code-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.kumi-sim__code-panel {
+  position: relative;
+}
+
+.kumi-sim__code-label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  text-transform: lowercase;
+}
+
+.kumi-sim__code-panel .kumi-sim__code {
+  margin: 0;
+  padding-top: 2.75rem;
+  padding-right: 2.75rem;
+}
+
+.kumi-sim__prompt {
+  max-height: min(22rem, 45vh);
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+.kumi-sim__copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 2px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.kumi-sim__copy-btn:hover {
+  color: var(--color-text);
+  background: color-mix(in srgb, var(--color-text) 6%, var(--color-bg));
+}
+
+.kumi-sim__copy-btn:focus-visible {
+  outline: 2px solid var(--color-border-strong);
+  outline-offset: 2px;
+}
+
+.kumi-sim__copy-btn.is-copied {
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.kumi-sim-toast {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  z-index: 200;
+  max-width: min(90vw, 22rem);
+  padding: 0.55em 1.1em;
+  border: 2px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: 0.88em;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: var(--chip-shadow);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(0.35rem);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.kumi-sim-toast.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 /* BMI calculator */
 
 .bmi-app {

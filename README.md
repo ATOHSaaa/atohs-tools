@@ -27,6 +27,7 @@ python3 -m http.server 8080
 ```
 index.html      … トップ
 font-simulator/ … Google Fonts プレビュー（ウェイト・行間・字間など）
+kumihan-simulator/ … Web組版の CSS プレビュー（禁則・段組・縦組など）
 shakai-futekigo/ … 社会不適合タイプ診断（16問・8タイプ）
 about.html      … サイト説明
 privacy.html    … プライバシー
